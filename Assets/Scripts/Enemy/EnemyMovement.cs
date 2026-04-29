@@ -5,7 +5,12 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     
-    [SerializeField] Transform player;
+    private Transform player;
+
+    private void OnEnable()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     // Update is called once per frame
     void Update()
